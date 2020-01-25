@@ -1,0 +1,85 @@
+@import "../utils.scss";
+
+.wrapper {
+  display: flex;
+  width: auto; // => column 상에서 width: 100% 이거쓰면 문제가 생긴다..
+  color: black;
+  padding: 0 32px;
+  // background-color: $oc-pink-1;
+  height: 74px;
+  align-items: center;
+  border-bottom: 1px solid $oc-gray-4;
+  @include media("<medium") {
+    padding: 32px 0;
+    flex-direction: column;
+    height: 100%;
+    //background-color: $oc-violet-7;
+  }
+}
+/*
+  small: 376px,
+  medium: 768px,
+  large: 1024px,
+  huge: 1200px
+*/
+
+.functionsList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  flex: 1;
+  // background-color: $oc-violet-3;
+  li {
+    float: left;
+    padding: 0 15px;
+  }
+  @include media("<medium") {
+    li {
+      clear: both;
+      width: 100%;
+      text-align: center;
+      padding: 15px 0;
+    }
+  }
+}
+
+.logo {
+  height: inherit;
+  @include media("<=medium") {
+    height: 74px;
+  }
+  img {
+    height: inherit;
+  }
+}
+
+.language {
+  position: relative;
+  select {
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;
+    // background: url(이미지 경로) no-repeat 95% 50%;  /* 화살표 모양의 이미지 */
+    &::-ms-expand {
+      display: none;
+    }
+    width: 120px; /* 원하는 너비설정 */
+    padding: 0.3em 0; /* 여백으로 높이 설정 */
+    padding-left: 1em;
+    padding-right: 0;
+    text-align: center;
+    font-family: inherit; /* 폰트 상속 */
+    border: 1px solid #999;
+    border-radius: 0px; /* iOS 둥근모서리 제거 */
+  }
+  div {
+    position: absolute;
+    right: 0;
+    top: 2px;
+  }
+}
+
+.currentFunction {
+  color: $oc-yellow-4;
+}

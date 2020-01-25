@@ -1,0 +1,78 @@
+@import "../utils.scss";
+// $arrow_width: 15px;
+// $wrapper_padding_right:
+.defaultWrapper {
+  overflow: hidden;
+}
+.wrapper {
+  position: relative;
+  line-height: initial; // 이거 없으면 미세하게 이상해짐.
+  display: inline-block;
+  width: auto;
+  min-width: 100px;
+  min-height: 20px;
+  border: 1px solid $oc-gray-7;
+  vertical-align: middle;
+  padding: 3px 5px;
+  padding-right: 31px; // 화살표 고려하여 결정됨.
+  // overflow: hidden; => defaultWrapper로 이관
+  margin: auto 1px;
+  user-select: none;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  &:after {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    content: ""; // 무적권 있어야 하더라..
+    background: url(/dropdown_arrow.svg) 0 0 no-repeat;
+    display: inline-block;
+    height: 8px;
+    width: 15px;
+    text-align: right;
+  }
+  ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    // border-bottom: 1px dotted;
+    padding-top: 3px;
+    padding-bottom: 8px;
+    user-select: none;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+    &:hover {
+      color: $oc-gray-8;
+    }
+  }
+  .show {
+    background-color: #f8f8f8;
+    display: block;
+    position: absolute;
+    border: 1px solid;
+    right: -1px;
+    top: -1px;
+    width: auto;
+    padding: 3px 5px;
+    padding-right: 31px;
+    min-height: 26px;
+    min-width: 100px;
+    // overflow: scroll;
+  }
+}
+
+.activatedBox {
+  &:after {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+}

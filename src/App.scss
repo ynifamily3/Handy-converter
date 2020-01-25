@@ -1,0 +1,20 @@
+// normalize.css 패키지의 normalize.css 파일을 임포트함.
+@import "~normalize.css/normalize";
+
+// 변수와 믹스인들
+@import "./utils.scss";
+
+// 나눔고딕 폰트
+// @import url("https://cdn.jsdelivr.net/gh/moonspam/NanumBarunGothic@latest/nanumbarungothicsubset.css");
+// => 인터넷 느리고 캐싱 안되서 일단 비활해놓음 ㅡㅡ
+// 메테리얼 아이콘스
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+.App {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  font-family: "NanumBarunGothic", sans-serif;
+  flex-direction: column;
+  min-height: 100vh;
+}

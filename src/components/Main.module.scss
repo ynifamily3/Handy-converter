@@ -1,0 +1,16 @@
+@import "../utils.scss";
+
+.wrapper {
+  flex: 1;
+  margin: 30px 32px;
+  h1 {
+    margin-bottom: 30px;
+  }
+  @include media("<=medium") {
+    margin: 15px 16px;
+    h1 {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+  }
+}

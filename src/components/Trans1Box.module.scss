@@ -1,0 +1,165 @@
+@import "../utils.scss";
+
+.trans1Box {
+  & + & {
+    margin-top: 30px;
+  }
+  box-sizing: border-box;
+  border-radius: 1em;
+  width: 100%;
+  min-height: 100px;
+  padding: 1em;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding-top: 2em;
+  background: linear-gradient(126deg, #ffeca7, #ffd43b);
+  background-size: 400% 400%;
+
+  -webkit-animation: translateBoxGrad 30s ease infinite;
+  -moz-animation: translateBoxGrad 30s ease infinite;
+  animation: translateBoxGrad 30s ease infinite;
+
+  @include media("<=medium") {
+    // color: purple;
+  }
+
+  @-webkit-keyframes translateBoxGrad {
+    0% {
+      background-position: 50% 0%;
+    }
+    50% {
+      background-position: 51% 100%;
+    }
+    100% {
+      background-position: 50% 0%;
+    }
+  }
+  @-moz-keyframes translateBoxGrad {
+    0% {
+      background-position: 50% 0%;
+    }
+    50% {
+      background-position: 51% 100%;
+    }
+    100% {
+      background-position: 50% 0%;
+    }
+  }
+  @keyframes translateBoxGrad {
+    0% {
+      background-position: 50% 0%;
+    }
+    50% {
+      background-position: 51% 100%;
+    }
+    100% {
+      background-position: 50% 0%;
+    }
+  }
+  //
+
+  .trans1Box__fixed {
+    // color: white;
+    position: absolute;
+    top: 0.7em;
+  }
+
+  .trans1Box__inoutBox {
+    display: flex;
+    // align-items: center;
+    @include media("<=medium") {
+      flex-direction: column;
+      text-align: center;
+    }
+    .trans1Box__input,
+    .trans1Box__output {
+      ul {
+        list-style-type: none;
+        margin: 1em auto;
+        padding: 0;
+        text-align: center;
+        display: flex;
+        justify-content: space-between;
+        // background: red;
+        max-width: 600px;
+      }
+      li {
+        display: inline-block;
+        margin: auto 1em;
+        // border: 1px solid black;
+        height: 40px;
+        border-radius: 1em;
+        background-color: #fefefe;
+        // min-width: 50px;
+        // height: 10px;
+        font-size: 0.8em;
+        // padding: 1em;
+        position: relative;
+        button {
+          all: unset;
+          padding: 1em;
+          &:hover,
+          &:active {
+            color: rgb(248, 180, 180);
+          }
+        }
+      }
+      flex: 1;
+      input {
+        all: unset;
+        background-color: rgba(0, 0, 0, 0.4);
+        font-size: 2em;
+        width: 100%;
+      }
+    }
+    .trans1Box__input {
+      // margin-right: 1em;
+      // @include media("<=medium") {
+      //   margin-right: 0;
+      // }
+      @include media(">medium") {
+        flex: 5;
+      }
+    }
+    .trans1Box__output {
+      // margin-left: 1em;
+      @include media(">medium") {
+        flex: 5;
+      }
+      @include media("<=medium") {
+        margin-top: 1em;
+        // margin-left: 0;
+      }
+    }
+
+    .trans1Box__arrow {
+      @include media(">medium") {
+        flex: 2;
+        max-width: 36px;
+        max-height: 36px;
+      }
+      display: inline-block;
+      @include media("<=medium") {
+        width: 36px;
+        height: 36px;
+      }
+
+      text-align: center;
+      background-image: url("/arrow.png");
+      background-size: cover;
+      text-indent: -9999px;
+      white-space: nowrap;
+      transform: rotate(180deg);
+      // margin: 0 1em;
+      @include media("<=medium") {
+        transform: rotate(-90deg);
+        margin: 0 auto;
+      }
+    }
+  }
+  .trans1Box__activated {
+    // li className
+    color: red;
+  }
+}
